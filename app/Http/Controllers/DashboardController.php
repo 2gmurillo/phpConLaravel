@@ -9,7 +9,7 @@ class DashboardController extends Controller
     public function index(Request $req)
     {
         return view('test', [
-            'message' => $req->query('message', 'No se detectó un mensaje'),
+            'message' => $req->query('message', 'Mensaje cambiado'),
         ]);
     }
 }
