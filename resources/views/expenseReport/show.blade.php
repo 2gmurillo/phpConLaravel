@@ -19,5 +19,6 @@
     </tr>
     @endforeach
   </table>
+  <a class="button" href="/expense_reports/{{$report->id}}/confirmSendEmail">Send Email</a>
 </div>
 @endsection
