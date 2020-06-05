@@ -37,7 +37,21 @@ class ExpenseReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validData = $request->validate(
+            [
+                'title' => 'required|min:5',
+            ],
+            [
+                'title.required' => 'El campo Title está vacío',
+                'title.min' => 'El campo Title requiere como mínimo 5 caracteres'
+            ]
+        );
+
+        $report = new ExpenseReport();
+        $report->title = $validData['title'];
+        $report->save();
+
+        return redirect('/expense_reports');
     }
 
     /**
@@ -59,7 +73,10 @@ class ExpenseReportController extends Controller
      */
     public function edit($id)
     {
-        //
+        $report = ExpenseReport::findOrFail($id);
+        return view('expenseReport.edit', [
+            'report' => $report
+        ]);
     }
 
     /**
@@ -71,7 +88,13 @@ class ExpenseReportController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validData = $request->validate([
+            'title' => 'required|min:5',
+        ]);
+        $report = ExpenseReport::findOrFail($id);
+        $report->title = $validData['title'];
+        $report->save();
+        return redirect('/expense_reports');
     }
 
     /**
@@ -82,6 +105,16 @@ class ExpenseReportController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $report = ExpenseReport::findOrFail($id);
+        $report->delete();
+        return redirect('/expense_reports');
+    }
+
+    public function confirmDelete($id)
+    {
+        $report = ExpenseReport::findOrFail($id);
+        return view('expenseReport.confirmDelete', [
+            'report' => $report
+        ]);
     }
 }
