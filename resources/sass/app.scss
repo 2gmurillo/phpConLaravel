@@ -1,8 +1,96 @@
-// Fonts
-// @import url('https://fonts.googleapis.com/css?family=Nunito');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-// Variables
-// @import 'variables';
+ul {
+    list-style: none;
+}
 
-// Bootstrap
-// @import '~bootstrap/scss/bootstrap';
+a {
+    text-decoration: none;
+}
+.h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1024px;
+    text-align: center;
+}
+h1 {
+    font-size: 5em;
+}
+td,
+th {
+    font-size: 25px;
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.df-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    margin: 10px 0;
+    padding: 0 50px;
+    min-width: 200px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #2f2f2f;
+    border: 1px solid #2f2f2f;
+    transition: 200ms;
+}
+.form {
+    width: 400px;
+}
+.input {
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #2f2f2f;
+    border: 1px solid #2f2f2f;
+    margin: 10px 0;
+    width: 90%;
+    height: 60px;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.alerta {
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: rgba(255, 100, 100, 0.75);
+    color: #2f2f2f;
+    border: 1px solid #2f2f2f;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

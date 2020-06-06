@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', 'LandingController@index');
+
 Route::resource('/expense_reports', 'ExpenseReportController');
 
 Route::get('/expense_reports/{id}/confirmDelete', 'ExpenseReportController@confirmDelete');
@@ -27,4 +29,4 @@ Route::post('/expense_reports/{id}/sendEmail', 'ExpenseReportController@sendEmai
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
