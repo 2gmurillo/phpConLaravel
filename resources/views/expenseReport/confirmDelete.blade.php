@@ -6,7 +6,7 @@
   <form class="form df-column" action="/expense_reports/{{$report->id}}" method="POST">
     @csrf
     @method('delete')
-    <button class="button" type="submit">Yes</button>
+      <button class="button" type="submit">Yes</button>
   </form>
   <a class="button" href="/expense_reports/">No</a>
 </div>
